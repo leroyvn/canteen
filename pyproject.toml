@@ -1,0 +1,35 @@
+[project]
+name = "canteen"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "Vincent Leroy", email = "vincent.leroy@rayference.eu" }
+]
+dependencies = [
+    "numpy>=1.10",
+    "attrs>=22",
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[project.scripts]
+hello = "canteen:hello"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = [
+    "pytest>=8.0.0",
+]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/canteen"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

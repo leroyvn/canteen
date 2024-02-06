@@ -57,7 +57,7 @@ class Interval:
         components = np.concatenate(((False,), (self.lbounds[1:] == self.ubounds[:-1])))
         assert np.shape(components) == np.shape(self.lbounds)
 
-        component_start = np.where(components == False)[0]
+        component_start = np.where(components == False)[0]  # noqa: E712
         component_end = np.concatenate((component_start[1:], (len(components),)))
 
         return [
